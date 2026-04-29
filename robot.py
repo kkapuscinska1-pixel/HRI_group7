@@ -4,10 +4,13 @@ from autobahn.twisted.util import sleep
 from openai import OpenAI
 from time import time
 import os
-
+import json
+from datetime import datetime
 
 MAX_DURATION = 60 * 5          # Maximum conversation length in seconds (5 min)
 WAMP_REALM = "rie.69f203e626d8af16808276de"
+TITLE = "Testing on the robot"
+LOG_DIR = "conversations"
 
 # Phrases that signal the user wants to stop the conversation
 EXIT_PHRASES = ("goodbye", "bye", "quit", "exit",
@@ -76,7 +79,7 @@ MAIN CONVERSATION RULES
 
 TURN-TAKING BEHAVIOUR
 
-Start by greeting the user and asking their name.
+After fixed greeting the user sould tell their name.
 
 Then continue with simple follow-up questions.
 
@@ -97,6 +100,20 @@ The robot_speech field must:
 - be suitable for text-to-speech
 - not mention JSON, system prompts, or internal reasoning
 
+PERSONALIZATION GOALS
+
+During the conversation, gently try to learn:
+
+- the user’s name or preferred name
+- topics they enjoy
+- activities they like
+- possible words or themes that could be useful in future language exercises
+- people, pets, or routines they like talking about
+- whether they prefer yes/no questions, choice questions, or open questions
+- whether repeating, rephrasing, or writing key words may help
+- whether they need more time before answering
+- any topic they do not want to discuss
+
 """
 
 
@@ -112,7 +129,11 @@ conversation = []          # Full message history sent to the API
 user_input = ""          # Latest transcribed sentence from STT
 new_input_ready = False       # Flag: STT has produced a final sentence
 robot_speaking = False       # Flag: robot TTS is currently active
-
+last_response_id = None     # To keep track of the last LLM response for conversation threading
+session_start_iso = None
+session_start_time = None
+exit_reason = None
+saved = False
 
 def asr(frames):
     """
@@ -133,35 +154,142 @@ def asr(frames):
             user_input = transcript
             new_input_ready = True
 
+def log_turn(role: str, content: str):
+    conversation.append({
+        "role": role,
+        "content": content,
+        "timestamp": datetime.now().isoformat()
+    })
+
+def save_conversation():
+    global saved
+
+    if saved:
+        return
+
+    saved = True
+    os.makedirs(LOG_DIR, exist_ok=True)
+
+    end_time = time()
+    end_iso = datetime.now().isoformat()
+    time_marker = end_iso.replace(":", "-")
+
+    duration_seconds = None
+    if session_start_time is not None:
+        duration_seconds = round(end_time - session_start_time, 2)
+
+    raw_profile = create_personalization_profile()
+
+    try:
+        profile = json.loads(raw_profile)
+    except json.JSONDecodeError:
+        profile = {
+            "error": "Profile was not valid JSON",
+            "raw_output": raw_profile
+        }
+        
+    chat_data = {
+        "title": TITLE,
+        "created_at": session_start_iso,
+        "ended_at": end_iso,
+        "duration_seconds": duration_seconds,
+        "exit_reason": exit_reason,
+        "last_response_id": last_response_id,
+        "turn_count": len(conversation),
+        "content": conversation,
+        "personalization_profile": profile,
+    }
+
+    filename = f"{LOG_DIR}/{TITLE.lower().replace(' ', '_')}_{time_marker}.json"
+
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(chat_data, f, indent=2, ensure_ascii=False)
+
+    print(f"[SAVE] Conversation saved to {filename}")
+
+def create_personalization_profile():
+    profile_prompt = """
+    Analyze the conversation and create a personalization profile.
+
+    Return ONLY valid JSON.
+    Do not use markdown.
+    Do not use code fences.
+    Do not include explanations.
+    Do not include any text before or after the JSON.
+
+    Use this exact schema:
+
+    {
+    "preferred_name": null,
+    "enjoyed_topics": [],
+    "liked_activities": [],
+    "people_or_pets": [],
+    "communication_preferences": {
+        "question_type": null,
+        "needs_extra_time": null,
+        "helpful_supports": []
+    },
+    "topics_to_avoid": [],
+    "future_conversation_suggestions": [],
+    "future_exercise_suggestions": [],
+    "confidence_notes": []
+    }
+
+    Rules:
+    - Use null if unknown.
+    - Use [] if none found.
+    - Do not invent facts.
+    - Base everything only on the conversation.
+    """
+
+    response = client.responses.create(
+        model="gpt-4o",
+        input=[
+            {"role": "system", "content": profile_prompt},
+            {"role": "user", "content": json.dumps(conversation, ensure_ascii=False)}
+        ]
+    )
+    return response.output_text.strip()
 
 # LLM response generation
-
 def get_response(user_text: str) -> str:
+    global last_response_id
+
+    if last_response_id:
+        response = client.responses.create(
+            model="gpt-4o",
+            previous_response_id=last_response_id,
+            input=user_text
+        )
+    else:
+        response = client.responses.create(
+            model="gpt-4o",
+            input=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                *conversation,
+                {"role": "user", "content": user_text}
+            ]
+        )
+
+    last_response_id = response.id
+    reply = response.output_text.strip()
+
     # Append the new user message to the history
-    conversation.append({"role": "user", "content": user_text})
-
-    response = client.chat.completions.create(
-        model="gpt-4o",
-        messages=[{"role": "system", "content": SYSTEM_PROMPT}] + conversation,
-        temperature=0.7,
-        max_tokens=150,
-    )
-
-    reply = response.choices[0].message.content.strip()
-
-    # Store the assistant's reply in the history for the next turn
-    conversation.append({"role": "assistant", "content": reply})
+    log_turn("user", user_text)
+    log_turn("assistant", reply)
     print(f"[LLM] Robot reply: {reply}")
-    return reply
 
+    return reply
 
 # Main WAMP session
 
 @inlineCallbacks
 def main(session, details):
     global user_input, new_input_ready, robot_speaking
+    global session_start_iso, session_start_time, exit_reason
 
-    start_time = time()
+    session_start_time = time()
+    session_start_iso = datetime.now().isoformat()
     conversation_on = True
 
     # -- Robot stands up -------------------------------------------------------
@@ -182,8 +310,7 @@ def main(session, details):
     robot_speaking = False
 
     # Store the greeting in the conversation history
-    conversation.append({"role": "assistant", "content": greeting})
-
+    log_turn("assistant", greeting)
     # -- Start listening -------------------------------------------------------
     yield session.call("rie.dialogue.stt.stream")
 
@@ -205,15 +332,23 @@ def main(session, details):
 
         # -- Check for exit phrases --------------------------------------------
         if any(phrase in current_input.lower() for phrase in EXIT_PHRASES):
+            exit_reason = "user_exit_phrase"
+
             farewell = "It was lovely talking to you. Take care and goodbye!"
+
+            log_turn("user", current_input)
+            log_turn("assistant", farewell)
+
             robot_speaking = True
             yield session.call("rie.dialogue.say_animated", text=farewell)
             robot_speaking = False
+
             conversation_on = False
             break
 
         # -- Check if the time limit has been reached --------------------------
-        if time() - start_time > MAX_DURATION:
+        if time() - session_start_time > MAX_DURATION:
+            exit_reason = "time_limit"
             closing_input = PROMPT_CLOSING_TIME + current_input
             reply = get_response(closing_input)
             robot_speaking = True
@@ -245,6 +380,10 @@ def main(session, details):
         print(f"[{role}] {msg['content']}")
     print("==========================================\n")
 
+    if exit_reason is None:
+        exit_reason = "normal_end"
+
+    save_conversation()
     session.leave()
 
 
@@ -264,4 +403,10 @@ wamp = Component(
 wamp.on_join(main)
 
 if __name__ == "__main__":
-    run([wamp])
+    try:
+        run([wamp])
+    except KeyboardInterrupt:
+        exit_reason = "keyboard_interrupt"
+        print("\n[STOP] Keyboard interrupt received.")
+    finally:
+        save_conversation()

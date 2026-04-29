@@ -5,31 +5,40 @@ from openai import OpenAI
 import json
 from datetime import datetime
 from time import time
+import os
 
-MAX_DURATION = 60 * 5 # 5 minutes in seconds
+MAX_DURATION = 60 * 1 # in seconds
 TITLE = "Testing on the robot"
 
 client = OpenAI()
 last_response_id = None
 finish = None
+global robot_speaking
+robot_speaking = False
 
-prompt_init = "You are taking on a role of speach therapist..."
+with open("first_prompt.txt", "r") as f:
+    prompt_init = f.read()
+print("Initial prompt loaded.", prompt_init)
+
 prompt_final_time = "This is the last thing the user said, plase respond to it and finish the conversation as the time is up: "
 prompt_final_user = "The user said [end_of_conversation_phrase], please finish the conversation with a goodbye message."
 
 starting_conversation = "Hello! I'm your robot assistant. Whats your name?"
 history = []
-
+global listening
+listening = ""
 
 def asr(frames):
     # frames[‘data’][‘body’][‘final’] returns true if the stt
     # considers the end of a turn / sentence is recognised.
-    if frames["data"]["body"]["final"]:
-        text_heard = frames["data"]["body"]["text"]
-        print(text_heard)
-        #here we have to add some kind of procesing of what the user said and what the robot
-        # history.append({"role": "user", "content": user_input})
-        # history.append({"role": "assistant", "content": assistant_reply})
+    if not robot_speaking:
+        if frames["data"]["body"]["final"]:
+            text_heard = frames["data"]["body"]["text"]
+            print(text_heard)
+            listening += text_heard
+            #here we have to add some kind of procesing of what the user said and what the robot
+            # history.append({"role": "user", "content": user_input})
+            # history.append({"role": "assistant", "content": assistant_reply})
 
 def get_response(PwA_input: str) -> str:
     global last_response_id, finish
@@ -67,8 +76,28 @@ def get_response(PwA_input: str) -> str:
 
     return response.output_text
 
+def save_conversation():
+    time_marker = datetime.now().isoformat().replace(":", "-")
+
+    chat_data = {
+        "last_response_id": last_response_id,
+        "created_at": time_marker,
+        "title": TITLE,
+        "content": history,
+        "listening": listening,
+    }
+
+    filename = f"conversations/{TITLE.lower().replace(' ', '_')}_{time_marker}.json"
+
+    with open(filename, "w") as f:
+        json.dump(chat_data, f, indent=2)
+
+    print(f"Conversation saved to {filename}")
+
 @inlineCallbacks
 def main(session, details):
+    global finish
+
 
     start_time = time()
 	
@@ -78,50 +107,58 @@ def main(session, details):
 	# yield session.call("rom.optional.behavior.play", name="BlocklyWaveRightArm")
 	# session.leave() # Close the connection with the robot
     
-    yield session.call("rom.optional.behavior.play", name="BlocklyStand")
-    yield session.subscribe(asr,"rie.dialogue.stt.stream")
-    yield session.call("rie.dialogue.stt.stream")
-    yield session.call("rie.dialogue.say", text = starting_conversation)
-    yield session.call("rom.optional.behavior.play", name="BlocklyWaveRightArm")
+    
+    try:
+        yield session.call("rom.optional.behavior.play", name="BlocklyStand")
+        yield session.subscribe(asr, "rie.dialogue.stt.stream")
+        yield session.call("rie.dialogue.stt.stream")
+        robot_speaking = True
+        yield session.call("rie.dialogue.say", text=starting_conversation)
+        listening = ""
+        robot_speaking = False
+        yield session.call("rom.optional.behavior.play", name="BlocklyWaveRightArm")
 
-    history.append({"role": "assistant", "content": starting_conversation})
+        history.append({"role": "assistant", "content": starting_conversation})
 
-    while True:
+        while True:
 
-        if time() - start_time > MAX_DURATION:
-            finish = "time"
+            if time() - start_time > MAX_DURATION:
+                finish = "time"
 
-        # listen to the user input and process it in the asr function
-        PwA_input = "This is a placeholder for the user input"
+            PwA_input = listening
 
-        if "[end_of_conversation_phrase]" in PwA_input.lower():
-            finish = "user"
-        
-        # get the response from the model using the get_response function
-        robot_response = get_response(PwA_input)
-        # say the response using the robot
-        yield session.call("rie.dialogue.say", text = robot_response)
+            if "[end_of_conversation_phrase]" in PwA_input.lower():
+                finish = "user"
 
-        # update the history
-        history.append({"role": "PwA", "content": PwA_input})
-        history.append({"role": "robot", "content": robot_response})
+            robot_response = get_response(PwA_input)
 
-        if finish:
-            break
+            robot_speaking = True
+            yield session.call("rie.dialogue.say", text=robot_response)
+            listening = ""
+            robot_speaking = False
 
-    yield session.call("rie.dialogue.stt.stop")
-    session.leave() # Close the connection with the robot
+            history.append({"role": "PwA", "content": PwA_input})
+            history.append({"role": "robot", "content": robot_response})
 
-    time_marker =datetime.now().isoformat()
-    chat_data = {
-        "last_response_id": last_response_id,
-        "created_at": time_marker,
-        "title": TITLE,
-        "content": history
-    }
+            if finish:
+                break
 
-    with open(f"conversations/{TITLE.lower().replace(' ', '_')}_{time_marker}.json", "w") as f:
-        json.dump(chat_data, f, indent=2)
+    except KeyboardInterrupt:
+        print("\nKeyboard interrupt received. Saving before exit...")
+        finish = "keyboard_interrupt"
+
+    finally:
+        try:
+            yield session.call("rie.dialogue.stt.stop")
+        except Exception as e:
+            print("Could not stop STT:", e)
+
+        save_conversation()
+
+        try:
+            session.leave()
+        except Exception as e:
+            print("Could not leave session:", e)
 
 
 wamp = Component(
@@ -130,7 +167,7 @@ wamp = Component(
 		"serializers": ["msgpack"],
 		"max_retries": 0
 	}],
-	realm="rie.69e7409b2c3865c6a7537c05",
+	realm="rie.69f203e626d8af16808276de",
 )
 
 wamp.on_join(main)
