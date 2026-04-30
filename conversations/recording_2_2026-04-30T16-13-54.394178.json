@@ -1,0 +1,129 @@
+{
+  "title": "Recording_2",
+  "created_at": "2026-04-30T16:11:38.858801",
+  "ended_at": "2026-04-30T16:13:54.394178",
+  "duration_seconds": 135.54,
+  "exit_reason": "user_exit_phrase",
+  "last_response_id": "resp_0d3bfb706190ac810069f36388422c819dbbc5d90c0d2f8a03",
+  "turn_count": 23,
+  "content": [
+    {
+      "role": "assistant",
+      "content": "Hello! I am your robot assistant. What is your name?"
+    },
+    {
+      "role": "user",
+      "content": "my name is Maddie and this is Kasia"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you, Maddie and Kasia! Do you have any hobbies you enjoy?"
+    },
+    {
+      "role": "user",
+      "content": "yes we like listening to music"
+    },
+    {
+      "role": "assistant",
+      "content": "That's great! What kind of music do you both like?"
+    },
+    {
+      "role": "user",
+      "content": "we like rock music"
+    },
+    {
+      "role": "assistant",
+      "content": "Rock music is awesome! Do you have a favorite band?"
+    },
+    {
+      "role": "user",
+      "content": "not really"
+    },
+    {
+      "role": "assistant",
+      "content": "That's okay! Do you like listening to music together often?"
+    },
+    {
+      "role": "user",
+      "content": "every day"
+    },
+    {
+      "role": "assistant",
+      "content": "That's wonderful! Would you like to keep talking, or is that enough for now?"
+    },
+    {
+      "role": "user",
+      "content": "keep talking but maybe let's change the topic"
+    },
+    {
+      "role": "assistant",
+      "content": "Sure thing! Do you have any pets you like talking about?"
+    },
+    {
+      "role": "user",
+      "content": "I like"
+    },
+    {
+      "role": "assistant",
+      "content": "Great! What kind of pet do you have?"
+    },
+    {
+      "role": "user",
+      "content": "I also have a dog"
+    },
+    {
+      "role": "assistant",
+      "content": "Dogs are wonderful! What's your dog's name?"
+    },
+    {
+      "role": "user",
+      "content": "dogs are wonderful what's your dog's name"
+    },
+    {
+      "role": "assistant",
+      "content": "I don't have a dog, but I love hearing about them. What's your dog's name?"
+    },
+    {
+      "role": "user",
+      "content": "uh"
+    },
+    {
+      "role": "assistant",
+      "content": "That's okay. We can talk about something else. Do you enjoy spending time with your dog?"
+    },
+    {
+      "role": "user",
+      "content": "goodbye"
+    },
+    {
+      "role": "assistant",
+      "content": "It was lovely talking to you. Take care and goodbye!"
+    }
+  ],
+  "personalization_profile": {
+    "preferred_name": "Maddie",
+    "enjoyed_topics": [
+      "music",
+      "rock music"
+    ],
+    "liked_activities": [
+      "listening to music"
+    ],
+    "people_or_pets": [
+      "Kasia",
+      "dog"
+    ],
+    "communication_preferences": {
+      "question_type": null,
+      "needs_extra_time": null,
+      "helpful_supports": []
+    },
+    "topics_to_avoid": [],
+    "future_conversation_suggestions": [
+      "pets",
+      "music preferences"
+    ],
+    "future_exercise_suggestions": [],
+    "confidence_notes": []
+  }
+}

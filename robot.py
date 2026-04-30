@@ -7,12 +7,12 @@ import os
 import json
 from datetime import datetime
 
-MAX_DURATION = 60 * 5          # Maximum conversation length in seconds (5 min)
-WAMP_REALM = "rie.69f203e626d8af16808276de"
-TITLE = "Testing on the robot"
+MAX_DURATION = 60 * 5          # max conversation length in seconds
+WAMP_REALM = "rie.69f352c326d8af1680827d4a"
+TITLE = "Recording_2"
 LOG_DIR = "conversations"
 
-# Phrases that signal the user wants to stop the conversation
+# phrases that signal the user wants to stop the conversation
 EXIT_PHRASES = ("goodbye", "bye", "quit", "exit",
                 "stop", "that's all", "thats all")
 
@@ -129,11 +129,13 @@ conversation = []          # Full message history sent to the API
 user_input = ""          # Latest transcribed sentence from STT
 new_input_ready = False       # Flag: STT has produced a final sentence
 robot_speaking = False       # Flag: robot TTS is currently active
-last_response_id = None     # To keep track of the last LLM response for conversation threading
+# To keep track of the last LLM response for conversation threading
+last_response_id = None
 session_start_iso = None
 session_start_time = None
 exit_reason = None
 saved = False
+
 
 def asr(frames):
     """
@@ -145,21 +147,23 @@ def asr(frames):
 
     if robot_speaking:
         # Ignore everything while the robot is talking
+        # print("mike off")
         return
 
     if frames["data"]["body"]["final"]:
         transcript = str(frames["data"]["body"]["text"]).strip()
+        # print("mike no")
         if transcript:
             print(f"[STT] User said: {transcript}")
             user_input = transcript
             new_input_ready = True
 
+
 def log_turn(role: str, content: str):
     conversation.append({
         "role": role,
-        "content": content,
-        "timestamp": datetime.now().isoformat()
-    })
+        "content": content, })
+
 
 def save_conversation():
     global saved
@@ -187,7 +191,7 @@ def save_conversation():
             "error": "Profile was not valid JSON",
             "raw_output": raw_profile
         }
-        
+
     chat_data = {
         "title": TITLE,
         "created_at": session_start_iso,
@@ -206,6 +210,7 @@ def save_conversation():
         json.dump(chat_data, f, indent=2, ensure_ascii=False)
 
     print(f"[SAVE] Conversation saved to {filename}")
+
 
 def create_personalization_profile():
     profile_prompt = """
@@ -246,12 +251,15 @@ def create_personalization_profile():
         model="gpt-4o",
         input=[
             {"role": "system", "content": profile_prompt},
-            {"role": "user", "content": json.dumps(conversation, ensure_ascii=False)}
+            {"role": "user", "content": json.dumps(
+                conversation, ensure_ascii=False)}
         ]
     )
     return response.output_text.strip()
 
 # LLM response generation
+
+
 def get_response(user_text: str) -> str:
     global last_response_id
 
@@ -283,6 +291,7 @@ def get_response(user_text: str) -> str:
 
 # Main WAMP session
 
+
 @inlineCallbacks
 def main(session, details):
     global user_input, new_input_ready, robot_speaking
@@ -306,6 +315,7 @@ def main(session, details):
         "What is your name?"
     )
     robot_speaking = True
+    yield session.call("rom.optional.behavior.play", name="BlocklyWaveRightArm")
     yield session.call("rie.dialogue.say_animated", text=greeting)
     robot_speaking = False
 
@@ -328,7 +338,7 @@ def main(session, details):
         new_input_ready = False
 
         # Close the STT stream while we process and speak
-        yield session.call("rie.dialogue.stt.close")
+        # yield session.call("rie.dialogue.stt.close")
 
         # -- Check for exit phrases --------------------------------------------
         if any(phrase in current_input.lower() for phrase in EXIT_PHRASES):
@@ -341,6 +351,7 @@ def main(session, details):
 
             robot_speaking = True
             yield session.call("rie.dialogue.say_animated", text=farewell)
+            yield session.call("rom.optional.behavior.play", name="BlocklyWaveRightArm")
             robot_speaking = False
 
             conversation_on = False
@@ -362,9 +373,8 @@ def main(session, details):
         robot_speaking = True
         yield session.call("rie.dialogue.say_animated", text=reply)
         robot_speaking = False
-
         # Short pause between robot speech ending and re-opening the microphone
-        yield sleep(0.5)
+        yield sleep(1.0)
 
         # Re-open STT stream for the next user turn
         yield session.call("rie.dialogue.stt.stream")
