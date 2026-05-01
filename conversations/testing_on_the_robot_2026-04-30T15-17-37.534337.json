@@ -1,0 +1,25 @@
+{
+  "title": "Testing on the robot",
+  "created_at": null,
+  "ended_at": "2026-04-30T15:17:37.534337",
+  "duration_seconds": null,
+  "exit_reason": null,
+  "last_response_id": null,
+  "turn_count": 0,
+  "content": [],
+  "personalization_profile": {
+    "preferred_name": null,
+    "enjoyed_topics": [],
+    "liked_activities": [],
+    "people_or_pets": [],
+    "communication_preferences": {
+      "question_type": null,
+      "needs_extra_time": null,
+      "helpful_supports": []
+    },
+    "topics_to_avoid": [],
+    "future_conversation_suggestions": [],
+    "future_exercise_suggestions": [],
+    "confidence_notes": []
+  }
+}

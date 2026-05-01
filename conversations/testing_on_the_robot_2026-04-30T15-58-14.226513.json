@@ -1,0 +1,97 @@
+{
+  "title": "Testing on the robot",
+  "created_at": "2026-04-30T15:55:47.429453",
+  "ended_at": "2026-04-30T15:58:14.226513",
+  "duration_seconds": 146.8,
+  "exit_reason": null,
+  "last_response_id": "resp_093e68823cad799e0069f35fb43db08194a4957bdc9851d4e6",
+  "turn_count": 15,
+  "content": [
+    {
+      "role": "assistant",
+      "content": "Hello! I am your robot assistant. What is your name?"
+    },
+    {
+      "role": "user",
+      "content": "our names are Kasia and Madi"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you, Kasia and Madi! Do you have any hobbies you enjoy?"
+    },
+    {
+      "role": "user",
+      "content": "you like listening to music"
+    },
+    {
+      "role": "assistant",
+      "content": "That's great! Do you have a favorite type of music?"
+    },
+    {
+      "role": "user",
+      "content": "I like rock music and"
+    },
+    {
+      "role": "assistant",
+      "content": "Rock music is awesome! Do you have a favorite band or artist?"
+    },
+    {
+      "role": "user",
+      "content": "I like scorpions"
+    },
+    {
+      "role": "assistant",
+      "content": "The Scorpions are a great band! Do you enjoy singing along or just listening?"
+    },
+    {
+      "role": "user",
+      "content": "uh I like singing along"
+    },
+    {
+      "role": "assistant",
+      "content": "That sounds fun! Would you like to keep chatting a bit more?"
+    },
+    {
+      "role": "user",
+      "content": "yes but maybe about something else do you have any other ideas"
+    },
+    {
+      "role": "assistant",
+      "content": "Sure! Do you have any pets, or perhaps a favorite animal?"
+    },
+    {
+      "role": "user",
+      "content": "do I have a dog"
+    },
+    {
+      "role": "assistant",
+      "content": "That's wonderful! What's your dog's name?"
+    }
+  ],
+  "personalization_profile": {
+    "preferred_name": null,
+    "enjoyed_topics": [
+      "music",
+      "rock music"
+    ],
+    "liked_activities": [
+      "listening to music",
+      "singing along"
+    ],
+    "people_or_pets": [
+      "dog"
+    ],
+    "communication_preferences": {
+      "question_type": null,
+      "needs_extra_time": null,
+      "helpful_supports": []
+    },
+    "topics_to_avoid": [],
+    "future_conversation_suggestions": [
+      "favorite animal",
+      "pets"
+    ],
+    "future_exercise_suggestions": [],
+    "confidence_notes": []
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "title": "Testing on the robot",
+  "created_at": "2026-04-30T15:43:44.091947",
+  "ended_at": "2026-04-30T15:47:14.710904",
+  "duration_seconds": 210.62,
+  "exit_reason": "user_exit_phrase",
+  "last_response_id": "resp_0e425cc417ba31b90069f35d505b88819cb8bb57f503ac89fe",
+  "turn_count": 35,
+  "content": [
+    {
+      "role": "assistant",
+      "content": "Hello! I am your robot assistant. What is your name?"
+    },
+    {
+      "role": "user",
+      "content": "what is your name hi my name is Kasia"
+    },
+    {
+      "role": "assistant",
+      "content": "Hi Kasia, nice to meet you! Do you like music?"
+    },
+    {
+      "role": "user",
+      "content": "I do"
+    },
+    {
+      "role": "assistant",
+      "content": "Great! What kind of music do you like?"
+    },
+    {
+      "role": "user",
+      "content": "I look Rock"
+    },
+    {
+      "role": "assistant",
+      "content": "Rock music is awesome! Do you have a favorite band?"
+    },
+    {
+      "role": "user",
+      "content": "no not really"
+    },
+    {
+      "role": "assistant",
+      "content": "That's okay! Do you like listening to music often?"
+    },
+    {
+      "role": "user",
+      "content": "I do I like listening to it while I'm biking"
+    },
+    {
+      "role": "assistant",
+      "content": "That sounds fun! Do you bike often?"
+    },
+    {
+      "role": "user",
+      "content": "can you hear me"
+    },
+    {
+      "role": "assistant",
+      "content": "Yes, I can hear you. Do you enjoy biking a lot?"
+    },
+    {
+      "role": "user",
+      "content": "oh yeah"
+    },
+    {
+      "role": "assistant",
+      "content": "That's great! Do you usually bike alone or with friends?"
+    },
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Would you like to continue talking about biking?"
+    },
+    {
+      "role": "user",
+      "content": "hello would you like to continue talking about biking know"
+    },
+    {
+      "role": "assistant",
+      "content": "No problem, Kasia. Is there another topic you enjoy talking about?"
+    },
+    {
+      "role": "user",
+      "content": "yes I can talk about um"
+    },
+    {
+      "role": "assistant",
+      "content": "Take your time. Do you like talking about food or pets?"
+    },
+    {
+      "role": "user",
+      "content": "sure"
+    },
+    {
+      "role": "assistant",
+      "content": "Do you have a favorite food?"
+    },
+    {
+      "role": "user",
+      "content": "we have a favorite food I really like pizza"
+    },
+    {
+      "role": "assistant",
+      "content": "Pizza is delicious! Do you have a favorite topping?"
+    },
+    {
+      "role": "user",
+      "content": "first"
+    },
+    {
+      "role": "assistant",
+      "content": "Do you mean first as in favorite topping?"
+    },
+    {
+      "role": "user",
+      "content": "fast as in favorite topping you know what it is"
+    },
+    {
+      "role": "assistant",
+      "content": "Maybe pepperoni or cheese?"
+    },
+    {
+      "role": "user",
+      "content": "pepperoni or cheese sure cheese"
+    },
+    {
+      "role": "assistant",
+      "content": "Cheese is classic and tasty! Would you like to keep chatting, or stop here?"
+    },
+    {
+      "role": "user",
+      "content": "let's"
+    },
+    {
+      "role": "assistant",
+      "content": "Great! Is there anything else you'd like to talk about?"
+    },
+    {
+      "role": "user",
+      "content": "great is there anything else you'd like to talk about now let's stop"
+    },
+    {
+      "role": "assistant",
+      "content": "It was lovely talking to you. Take care and goodbye!"
+    }
+  ],
+  "personalization_profile": {
+    "preferred_name": "Kasia",
+    "enjoyed_topics": [
+      "music",
+      "biking",
+      "food"
+    ],
+    "liked_activities": [
+      "listening to music",
+      "biking"
+    ],
+    "people_or_pets": [],
+    "communication_preferences": {
+      "question_type": null,
+      "needs_extra_time": null,
+      "helpful_supports": []
+    },
+    "topics_to_avoid": [],
+    "future_conversation_suggestions": [
+      "favorite music genres",
+      "more about food preferences"
+    ],
+    "future_exercise_suggestions": [
+      "discussing favorite biking routes or experiences"
+    ],
+    "confidence_notes": []
+  }
+}
