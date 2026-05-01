@@ -231,8 +231,6 @@ def create_personalization_profile():
     },
     "topics_to_avoid": [],
     "future_conversation_suggestions": [],
-    "future_exercise_suggestions": [],
-    "confidence_notes": []
     }
 
     Rules:
