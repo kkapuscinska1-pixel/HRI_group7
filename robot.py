@@ -125,11 +125,10 @@ PROMPT_CLOSING_TIME = (
 )
 
 client = OpenAI()
-conversation = []          # Full message history sent to the API
+conversation = []          # Full message history
 user_input = ""          # Latest transcribed sentence from STT
 new_input_ready = False       # Flag: STT has produced a final sentence
 robot_speaking = False       # Flag: robot TTS is currently active
-# To keep track of the last LLM response for conversation threading
 last_response_id = None
 session_start_iso = None
 session_start_time = None
@@ -146,13 +145,11 @@ def asr(frames):
     global user_input, new_input_ready
 
     if robot_speaking:
-        # Ignore everything while the robot is talking
-        # print("mike off")
+        # Ignore everything while the robot is talking to avoid reacting to its own voice
         return
 
     if frames["data"]["body"]["final"]:
         transcript = str(frames["data"]["body"]["text"]).strip()
-        # print("mike no")
         if transcript:
             print(f"[STT] User said: {transcript}")
             user_input = transcript
@@ -301,15 +298,15 @@ def main(session, details):
     session_start_iso = datetime.now().isoformat()
     conversation_on = True
 
-    # -- Robot stands up -------------------------------------------------------
+    # Robot stands up
     yield session.call("rie.dialogue.config.language", lang="en")
 
     yield session.call("rom.optional.behavior.play", name="BlocklyStand")
 
-    # -- Subscribe the ASR callback to the STT stream -------------------------
+    #  Subscribe the ASR callback to the STT stream
     yield session.subscribe(asr, "rie.dialogue.stt.stream")
 
-    # -- Opening greeting (robot speaks first) ---------------------------------
+    #  Opening greeting and first wave
     greeting = (
         "Hello! I am your robot assistant. "
         "What is your name?"
@@ -321,10 +318,10 @@ def main(session, details):
 
     # Store the greeting in the conversation history
     log_turn("assistant", greeting)
-    # -- Start listening -------------------------------------------------------
+    #  Start listening
     yield session.call("rie.dialogue.stt.stream")
 
-    # -- Main dialogue loop ----------------------------------------------------
+    # Main dialogue loop
     while conversation_on:
 
         # Wait until STT has produced a new final sentence
@@ -332,7 +329,7 @@ def main(session, details):
             yield sleep(0.3)
             continue
 
-        # -- Grab the user's input and reset the flag --------------------------
+        # Grab the user's input and reset the flag
         current_input = user_input
         user_input = ""
         new_input_ready = False
@@ -340,7 +337,7 @@ def main(session, details):
         # Close the STT stream while we process and speak
         # yield session.call("rie.dialogue.stt.close")
 
-        # -- Check for exit phrases --------------------------------------------
+        #  Check for exit phrases
         if any(phrase in current_input.lower() for phrase in EXIT_PHRASES):
             exit_reason = "user_exit_phrase"
 
@@ -357,7 +354,7 @@ def main(session, details):
             conversation_on = False
             break
 
-        # -- Check if the time limit has been reached --------------------------
+        # Check if the time limit has been reached
         if time() - session_start_time > MAX_DURATION:
             exit_reason = "time_limit"
             closing_input = PROMPT_CLOSING_TIME + current_input
@@ -368,7 +365,7 @@ def main(session, details):
             conversation_on = False
             break
 
-        # -- Normal turn: get LLM reply and speak it ---------------------------
+        # Normal turn: get LLM reply and speak it
         reply = get_response(current_input)
         robot_speaking = True
         yield session.call("rie.dialogue.say_animated", text=reply)
@@ -379,11 +376,11 @@ def main(session, details):
         # Re-open STT stream for the next user turn
         yield session.call("rie.dialogue.stt.stream")
 
-    # -- Conversation finished: close STT and sit down -----------------------
+    # Conversation finished: close STT and sit down
     yield session.call("rie.dialogue.stt.close")
     yield session.call("rom.optional.behavior.play", name="BlocklyCrouch")
 
-    # Print the full collected conversation for inspection / personalisation
+    # Print the full collected conversation
     print("\n Conversation summary")
     for msg in conversation:
         role = "Robot" if msg["role"] == "assistant" else "User"
@@ -396,10 +393,8 @@ def main(session, details):
     save_conversation()
     session.leave()
 
+# WAMP component setup
 
-# ---------------------------------------------------------------------------
-# WAMP component setup  –  replace the realm with your own
-# ---------------------------------------------------------------------------
 
 wamp = Component(
     transports=[{
