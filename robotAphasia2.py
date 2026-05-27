@@ -1,5 +1,5 @@
 """
-robot.py – Production-Ready Social Robot for Aphasia Speech Therapy.
+robot.py - Production-Ready Social Robot for Aphasia Speech Therapy.
 
 Features:
   - Class-based state management (no globals).
