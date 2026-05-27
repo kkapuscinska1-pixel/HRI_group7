@@ -8,7 +8,7 @@ import json
 from datetime import datetime
 
 MAX_DURATION = 60 * 5          # max conversation length in seconds
-WAMP_REALM = "rie.69f352c326d8af1680827d4a"
+WAMP_REALM = "rie.6a16d460f2a08d602afbbb9a"
 TITLE = "Recording_2"
 LOG_DIR = "conversations"
 

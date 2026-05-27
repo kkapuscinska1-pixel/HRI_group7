@@ -28,7 +28,7 @@ from openai import OpenAI
 # =============================================================================
 
 MAX_DURATION = 60 * 5        # Maximum session length in seconds
-WAMP_REALM = "rie.69f352c326d8af1680827d4a"
+WAMP_REALM = "rie.6a16d460f2a08d602afbbb9a"
 LLM_MODEL = "gpt-4o"
 
 PROFILES_DIR = "profiles"
@@ -381,7 +381,7 @@ class RobotController:
 
         # Greeting
         preferred = self.profile.get("preferred_name", "")
-        greeting = f"Hello {preferred}! Great to see you again. Are you ready to start?" if preferred else "Hello! I am your robot assistant. What is your name?"
+        greeting = f"Hello {preferred}! Great to see you again. Are you ready to start?" if preferred else "Hello! I am your robot assistant. How would you like to be addressed?"
 
         self.log_turn("assistant", greeting)
 

@@ -1,0 +1,67 @@
+{
+  "title": "Recording_2",
+  "created_at": "2026-05-27T13:38:50.534209",
+  "ended_at": "2026-05-27T13:45:57.281687",
+  "duration_seconds": 426.75,
+  "exit_reason": null,
+  "last_response_id": "resp_0b75a30845b701ee006a16d83979d081949bbcbc8b1e4f21ed",
+  "turn_count": 9,
+  "content": [
+    {
+      "role": "assistant",
+      "content": "Hello! I am your robot assistant. What is your name?"
+    },
+    {
+      "role": "user",
+      "content": "my name is Maddie"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you, Maddie! Do you like music?"
+    },
+    {
+      "role": "user",
+      "content": "yes I do is it easy to listen to"
+    },
+    {
+      "role": "assistant",
+      "content": "That's great! Do you have a favorite type of music?"
+    },
+    {
+      "role": "user",
+      "content": "not really hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello again, Maddie! Do you have any hobbies you enjoy?"
+    },
+    {
+      "role": "user",
+      "content": "you see you have been talking for so long and it still didn't pick up on anything"
+    },
+    {
+      "role": "assistant",
+      "content": "That's okay, Maddie. Do you enjoy drawing or reading?"
+    }
+  ],
+  "personalization_profile": {
+    "preferred_name": "Maddie",
+    "enjoyed_topics": [
+      "music"
+    ],
+    "liked_activities": [],
+    "people_or_pets": [],
+    "communication_preferences": {
+      "question_type": null,
+      "needs_extra_time": null,
+      "helpful_supports": []
+    },
+    "topics_to_avoid": [],
+    "future_conversation_suggestions": [
+      "Discuss more about music preferences",
+      "Explore hobbies and interests"
+    ],
+    "future_exercise_suggestions": [],
+    "confidence_notes": []
+  }
+}
