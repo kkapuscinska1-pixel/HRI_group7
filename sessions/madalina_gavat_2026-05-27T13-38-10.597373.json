@@ -1,0 +1,91 @@
+{
+  "participant_id": "madalina_gavat",
+  "scenario": "Social Roleplay",
+  "timestamp": "2026-05-27T13:36:04.960889",
+  "duration_seconds": 125.64,
+  "exit_reason": "user_exit_phrase",
+  "pacing_metadata": {
+    "avg_response_time_seconds": 5.41,
+    "total_user_turns": 7,
+    "slow_pace_count": 1
+  },
+  "errors_encountered": [],
+  "conversation": [
+    {
+      "speaker": "robot",
+      "text": "Hello Molina! Great to see you again. Are you ready to start today?",
+      "timestamp": "2026-05-27T13:36:08.647624"
+    },
+    {
+      "speaker": "user",
+      "text": "uh can you correct my name my name is Molina",
+      "timestamp": "2026-05-27T13:36:28.007277"
+    },
+    {
+      "speaker": "robot",
+      "text": "Thank you, Molina. I have your name noted correctly now.",
+      "timestamp": "2026-05-27T13:36:28.007625"
+    },
+    {
+      "speaker": "user",
+      "text": "stuff",
+      "timestamp": "2026-05-27T13:36:41.301135"
+    },
+    {
+      "speaker": "robot",
+      "text": "Shall we start with a greeting practice today? Like saying hi to a neighbour?",
+      "timestamp": "2026-05-27T13:36:41.301450"
+    },
+    {
+      "speaker": "user",
+      "text": "I think we can in the uh since we already give it",
+      "timestamp": "2026-05-27T13:36:54.125277"
+    },
+    {
+      "speaker": "robot",
+      "text": "Would you like to practice saying hi to a neighbour?",
+      "timestamp": "2026-05-27T13:36:54.125798"
+    },
+    {
+      "speaker": "user",
+      "text": "yes",
+      "timestamp": "2026-05-27T13:37:07.684787"
+    },
+    {
+      "speaker": "robot",
+      "text": "Imagine you see your neighbour outside. Would you say, 'Hi' or 'Hello'?",
+      "timestamp": "2026-05-27T13:37:07.685171"
+    },
+    {
+      "speaker": "user",
+      "text": "depends on",
+      "timestamp": "2026-05-27T13:37:20.211641"
+    },
+    {
+      "speaker": "robot",
+      "text": "Would you like to practice with 'Hi' for now?",
+      "timestamp": "2026-05-27T13:37:20.211990"
+    },
+    {
+      "speaker": "user",
+      "text": "I don't like the fact that it's taking longer and it's just taking bits and pieces and it's not waiting for me to finish",
+      "timestamp": "2026-05-27T13:37:32.602847"
+    },
+    {
+      "speaker": "robot",
+      "text": "I'm here to go at your pace, Molina. Would you like me to slow down?",
+      "timestamp": "2026-05-27T13:37:32.603032"
+    },
+    {
+      "speaker": "user",
+      "text": "bye",
+      "timestamp": "2026-05-27T13:37:55.090453"
+    },
+    {
+      "speaker": "robot",
+      "text": "It was lovely talking to you. Take care and goodbye!",
+      "timestamp": "2026-05-27T13:37:55.090980"
+    }
+  ],
+  "questionnaire": {}
+}

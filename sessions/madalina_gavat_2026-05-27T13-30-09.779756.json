@@ -1,0 +1,95 @@
+{
+  "participant_id": "madalina_gavat",
+  "scenario": "Describing Feelings",
+  "timestamp": "2026-05-27T13:30:09.779769",
+  "duration_seconds": 109.82,
+  "exit_reason": "user_exit_phrase",
+  "conversation": [
+    {
+      "speaker": "robot",
+      "text": "Hello! I am your robot assistant. What is your name?",
+      "timestamp": "2026-05-27T13:28:20.262401"
+    },
+    {
+      "speaker": "user",
+      "text": "My Name Is Molina",
+      "timestamp": "2026-05-27T13:28:35.191108"
+    },
+    {
+      "speaker": "robot",
+      "text": "Hi Molina! How are you feeling today? Happy or tired?",
+      "timestamp": "2026-05-27T13:28:37.585437"
+    },
+    {
+      "speaker": "user",
+      "text": "happy inspired",
+      "timestamp": "2026-05-27T13:28:46.764779"
+    },
+    {
+      "speaker": "robot",
+      "text": "That's great to hear! Are you feeling excited about something?",
+      "timestamp": "2026-05-27T13:28:48.111187"
+    },
+    {
+      "speaker": "user",
+      "text": "um",
+      "timestamp": "2026-05-27T13:28:56.186859"
+    },
+    {
+      "speaker": "robot",
+      "text": "I did not quite catch that. Could you say it again?",
+      "timestamp": "2026-05-27T13:28:56.187010"
+    },
+    {
+      "speaker": "user",
+      "text": "um",
+      "timestamp": "2026-05-27T13:29:04.813306"
+    },
+    {
+      "speaker": "robot",
+      "text": "I did not quite catch that. Could you say it again?",
+      "timestamp": "2026-05-27T13:29:04.813447"
+    },
+    {
+      "speaker": "user",
+      "text": "say it again I'm excited about the weather",
+      "timestamp": "2026-05-27T13:29:13.577744"
+    },
+    {
+      "speaker": "robot",
+      "text": "That's wonderful! Nice weather can make us feel good.",
+      "timestamp": "2026-05-27T13:29:16.372949"
+    },
+    {
+      "speaker": "user",
+      "text": "you should ask me a question",
+      "timestamp": "2026-05-27T13:29:28.807191"
+    },
+    {
+      "speaker": "robot",
+      "text": "Okay, do you feel calm when the weather is nice?",
+      "timestamp": "2026-05-27T13:29:30.401542"
+    },
+    {
+      "speaker": "user",
+      "text": "oh my God we need to prompt this guy better yeah yeah",
+      "timestamp": "2026-05-27T13:29:39.293413"
+    },
+    {
+      "speaker": "robot",
+      "text": "Feeling calm is nice. Do you like sunny days or rainy days?",
+      "timestamp": "2026-05-27T13:29:40.292952"
+    },
+    {
+      "speaker": "user",
+      "text": "stop",
+      "timestamp": "2026-05-27T13:29:51.443644"
+    },
+    {
+      "speaker": "robot",
+      "text": "It was lovely talking to you. Take care and goodbye!",
+      "timestamp": "2026-05-27T13:29:51.444162"
+    }
+  ],
+  "questionnaire": {}
+}
