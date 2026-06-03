@@ -377,15 +377,22 @@ class LLMManager:
                 content = response.choices[0].message.content or ""
                 parsed = json.loads(content)
 
-                speech = parsed.get("robot_speech", "").strip()
-                pace = parsed.get("pace", "normal").lower()
+                speech = parsed.get("text", "").strip()
+                gesture = parsed.get("gesture", ["BlocklyWaveRightArm"])
+                if isinstance(gesture, str):
+                    gesture = [gesture]
+                if not isinstance(gesture, list) or not gesture:
+                    gesture = ["BlocklyWaveRightArm"]
+
+                metadata = parsed.get("metadata", {})
+                pace = metadata.get("pace", "normal").lower()
 
                 if not speech:
                     raise ValueError("'robot_speech' empty in LLM JSON")
                 if pace not in ("normal", "slow"):
                     pace = "normal"
 
-                return speech, pace, None  # success
+                return speech, gesture, pace, None  # success
 
             except (APIError, APIConnectionError, APITimeoutError) as exc:
                 err = f"API error attempt {attempt + 1}: {exc}"
@@ -402,7 +409,7 @@ class LLMManager:
                 print(f"[LLM] Retrying in {delay}s...")
                 time.sleep(delay)
 
-        return LLM_FALLBACK_SPEECH, "slow", err
+        return LLM_FALLBACK_SPEECH, ["BlocklyWaveRightArm"], "slow", err
 
     # ------------------------------------------------------------------
     # Post-session profile extraction
@@ -753,16 +760,25 @@ class RobotController:
     # =========================================================================
 
     @inlineCallbacks
-    def _speak(self, text: str) -> None:
-        """
-        Speak via TTS. Sets state = SPEAKING; resets on completion/error.
-        Uses _wamp() so a hung TTS call times out rather than freezing.
-        """
+    def _speak(self, text: str, gesture: str = "BlocklyWaveRightArm") -> None:
         self._set_state(RobotState.SPEAKING)
         self.robot_speaking = True
         self._log(f"[TTS] '{text[:80]}{'...' if len(text) > 80 else ''}'")
+
         try:
-            yield self._wamp("rie.dialogue.say_animated", text=text)
+            movement = self._wamp(
+                "rom.optional.behavior.play",
+                name=gesture
+            )
+
+            yield self._wamp(
+                "rie.dialogue.say",
+                text=text,
+                lang="en"
+            )
+
+            yield movement
+
         finally:
             self.robot_speaking = False
 
@@ -916,8 +932,7 @@ class RobotController:
             )
 
         self._log_turn("assistant", greeting)
-        yield self._wamp("rom.optional.behavior.play", name="BlocklyWaveRightArm")
-        yield self._speak(greeting)
+        yield self._speak(greeting, gesture="BlocklyWaveRightArm")
         yield self._open_stt()
         self._set_state(RobotState.LISTENING)
         self._user_turn_start = time.time()
@@ -938,7 +953,7 @@ class RobotController:
                         "Thank you so much for talking with me!"
                     )
                     self._log_turn("assistant", timeout_farewell)
-                    yield self._speak(timeout_farewell)
+                    yield self._speak(timeout_farewell, gesture="BlocklyWaveRightArm")
                     break
 
                 continue
@@ -955,8 +970,7 @@ class RobotController:
                 farewell = "It was lovely talking to you. Take care and goodbye!"
                 self._log_turn("user",      current_input)
                 self._log_turn("assistant", farewell)
-                yield self._speak(farewell)
-                yield self._wamp("rom.optional.behavior.play", name="BlocklyWaveRightArm")
+                yield self._speak(farewell, gesture="BlocklyWaveRightArm")
                 break
 
             # ── Time limit (re-checked when input arrives) ────────────────────
@@ -977,7 +991,7 @@ class RobotController:
                     self._log_error(err)
                 self._log_turn("user",      current_input)
                 self._log_turn("assistant", speech)
-                yield self._speak(speech)
+                yield self._speak(speech, gesture="BlocklyWaveRightArm")
                 break
 
             # ── Unclear STT input ─────────────────────────────────────────────
@@ -1011,7 +1025,7 @@ class RobotController:
 
             t0 = time.time()
             # [NEW] deferToThread: OpenAI runs in worker thread
-            speech, pace, err = yield threads.deferToThread(
+            speech, gesture, pace, err = yield threads.deferToThread(
                 self.llm._sync_get_response, messages
             )
             self._log(f"[LLM] Responded in {time.time()-t0:.1f}s")
@@ -1023,7 +1037,7 @@ class RobotController:
             self._log_turn("user",      current_input)
             self._log_turn("assistant", speech)
 
-            yield self._speak(speech)
+            yield self._speak(speech, gesture=gesture)
 
             pause = self._calculate_pause(pace)
             yield deferLater(reactor, pause, lambda: None)
