@@ -1,0 +1,93 @@
+{
+  "participant_id": "ilse_bakker",
+  "scenario": "Small Talk",
+  "timestamp": "2026-06-03T16:32:52.299753",
+  "duration_seconds": 168.67,
+  "exit_reason": "user_exit_phrase",
+  "pacing_metadata": {
+    "avg_response_time_seconds": 7.61,
+    "total_user_turns": 7,
+    "slow_pace_count": 1
+  },
+  "errors_encountered": [
+    "16:32:52.312: [WAMP] Error rie.dialogue.config.language: ApplicationError: ApplicationError(error=<wamp.error.no_such_procedure>, args=[], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)"
+  ],
+  "conversation": [
+    {
+      "speaker": "robot",
+      "text": "Hello Ilse! I am your robot assistant. How are you feeling today?",
+      "timestamp": "2026-06-03T16:33:01.844380"
+    },
+    {
+      "speaker": "user",
+      "text": "kut",
+      "timestamp": "2026-06-03T16:33:17.410348"
+    },
+    {
+      "speaker": "robot",
+      "text": "It's okay if things are confusing. Do you feel happy or tired today?",
+      "timestamp": "2026-06-03T16:33:17.410358"
+    },
+    {
+      "speaker": "user",
+      "text": "No I Feel Alright not too tired",
+      "timestamp": "2026-06-03T16:33:40.532337"
+    },
+    {
+      "speaker": "robot",
+      "text": "That's good to hear, Ilse. Do you like spending time outside?",
+      "timestamp": "2026-06-03T16:33:40.532354"
+    },
+    {
+      "speaker": "user",
+      "text": "yes",
+      "timestamp": "2026-06-03T16:34:16.116178"
+    },
+    {
+      "speaker": "robot",
+      "text": "Wonderful! Do you enjoy walking or sitting outside more?",
+      "timestamp": "2026-06-03T16:34:16.116183"
+    },
+    {
+      "speaker": "user",
+      "text": "Wall",
+      "timestamp": "2026-06-03T16:34:33.275740"
+    },
+    {
+      "speaker": "robot",
+      "text": "That's great! Walking can be refreshing.",
+      "timestamp": "2026-06-03T16:34:33.275752"
+    },
+    {
+      "speaker": "user",
+      "text": "and you",
+      "timestamp": "2026-06-03T16:34:56.830323"
+    },
+    {
+      "speaker": "robot",
+      "text": "I wish I could join you for a walk!",
+      "timestamp": "2026-06-03T16:34:56.830330"
+    },
+    {
+      "speaker": "user",
+      "text": "Let's Go",
+      "timestamp": "2026-06-03T16:35:18.949628"
+    },
+    {
+      "speaker": "robot",
+      "text": "That sounds fun! Lead the way, Ilse.",
+      "timestamp": "2026-06-03T16:35:18.949639"
+    },
+    {
+      "speaker": "user",
+      "text": "stop",
+      "timestamp": "2026-06-03T16:35:29.233606"
+    },
+    {
+      "speaker": "robot",
+      "text": "It was lovely talking to you. Take care and goodbye!",
+      "timestamp": "2026-06-03T16:35:29.233615"
+    }
+  ],
+  "questionnaire": {}
+}

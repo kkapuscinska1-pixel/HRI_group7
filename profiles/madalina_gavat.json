@@ -1,25 +1,32 @@
 {
   "participant_id": "madalina_gavat",
-  "preferred_name": "Molina",
-  "preferred_question_style": "Open questions about feelings or experiences with specific topics like the weather worked better.",
-  "enjoyed_topics": [
-    "weather"
-  ],
-  "avoided_topics": [],
-  "session_notes": [
-    {
-      "date": "2026-05-27T13:30:09.778414",
-      "note": "Molina seems to prefer questions that explore thoughts or experiences related to certain topics. There was some miscommunication with the 'um' response, but clarified conversations followed."
-    },
-    {
-      "date": "2026-05-27T13:34:44.772283",
-      "note": "Participant seems confused by open questions and repetition. Struggles with understanding or responding to questions. Name correction was attempted but not clarified by participant."
-    },
-    {
-      "date": "2026-05-27T13:38:10.595427",
-      "note": "Participant prefers slower-paced interactions. Enjoys role-playing scenarios. Corrects name promptly for accuracy."
-    }
-  ],
-  "last_session_summary": "The session involved greeting practice in a social roleplay scenario. Molina expressed that the interaction was too fast-paced and preferred more time to respond.",
-  "suggested_next_scenario": "Social Roleplay"
+  "preferred_name": "Madalina",
+  "enjoyed_topics": [],
+  "liked_activities": [],
+  "people_or_pets": [],
+  "communication_preferences": {
+    "question_type": null,
+    "needs_extra_time": null,
+    "helpful_supports": [
+      "repeat"
+    ]
+  },
+  "topics_to_avoid": [],
+  "future_conversation_suggestions": [],
+  "session_notes": {
+    "what_went_well": [],
+    "what_was_hard": [
+      "background noise",
+      "understanding specific words or phrases"
+    ],
+    "support_that_helped": [],
+    "possible_stt_or_transcription_issues": [
+      "missed words due to noise"
+    ]
+  },
+  "suggested_next_scenario": {
+    "scenario": "therapy_practice",
+    "reason": "User struggled with specific words or short phrases"
+  },
+  "avoided_topics": []
 }

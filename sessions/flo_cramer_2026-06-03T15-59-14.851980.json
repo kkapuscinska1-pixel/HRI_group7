@@ -1,0 +1,121 @@
+{
+  "participant_id": "flo_cramer",
+  "scenario": "Social Roleplay",
+  "timestamp": "2026-06-03T15:56:00.721572",
+  "duration_seconds": 194.13,
+  "exit_reason": "user_exit_phrase",
+  "pacing_metadata": {
+    "avg_response_time_seconds": 3.07,
+    "total_user_turns": 10,
+    "slow_pace_count": 0
+  },
+  "errors_encountered": [],
+  "conversation": [
+    {
+      "speaker": "robot",
+      "text": "Hello Flo! I am your robot assistant. How are you feeling today?",
+      "timestamp": "2026-06-03T15:56:04.502739"
+    },
+    {
+      "speaker": "user",
+      "text": "I am feeling okay",
+      "timestamp": "2026-06-03T15:56:21.296571"
+    },
+    {
+      "speaker": "robot",
+      "text": "That's good to hear. Let's practise ordering coffee. Would you like to start?",
+      "timestamp": "2026-06-03T15:56:21.296581"
+    },
+    {
+      "speaker": "user",
+      "text": "good morning",
+      "timestamp": "2026-06-03T15:56:41.047046"
+    },
+    {
+      "speaker": "robot",
+      "text": "Good morning! Would you like to order some coffee?",
+      "timestamp": "2026-06-03T15:56:41.047063"
+    },
+    {
+      "speaker": "user",
+      "text": "yes please",
+      "timestamp": "2026-06-03T15:57:00.622204"
+    },
+    {
+      "speaker": "robot",
+      "text": "Great choice! Would you like it black or with milk?",
+      "timestamp": "2026-06-03T15:57:00.622214"
+    },
+    {
+      "speaker": "user",
+      "text": "with milk and sugar please",
+      "timestamp": "2026-06-03T15:57:20.058550"
+    },
+    {
+      "speaker": "robot",
+      "text": "Got it, coffee with milk and sugar.",
+      "timestamp": "2026-06-03T15:57:20.058560"
+    },
+    {
+      "speaker": "user",
+      "text": "do you like coffee",
+      "timestamp": "2026-06-03T15:57:39.833356"
+    },
+    {
+      "speaker": "robot",
+      "text": "I don't drink coffee, but I hear it's delicious.",
+      "timestamp": "2026-06-03T15:57:39.833366"
+    },
+    {
+      "speaker": "user",
+      "text": "can we practice more",
+      "timestamp": "2026-06-03T15:57:58.871542"
+    },
+    {
+      "speaker": "robot",
+      "text": "Of course, Flo! Let's practice greeting a friend.",
+      "timestamp": "2026-06-03T15:57:58.871555"
+    },
+    {
+      "speaker": "user",
+      "text": "all right",
+      "timestamp": "2026-06-03T15:58:16.375946"
+    },
+    {
+      "speaker": "robot",
+      "text": "Imagine you see your friend in a park. What would you say?",
+      "timestamp": "2026-06-03T15:58:16.375954"
+    },
+    {
+      "speaker": "user",
+      "text": "hello",
+      "timestamp": "2026-06-03T15:58:32.966810"
+    },
+    {
+      "speaker": "robot",
+      "text": "Great start! You could ask, \"How have you been?\"",
+      "timestamp": "2026-06-03T15:58:32.966822"
+    },
+    {
+      "speaker": "user",
+      "text": "how have you been",
+      "timestamp": "2026-06-03T15:58:47.917111"
+    },
+    {
+      "speaker": "robot",
+      "text": "Perfect! That's a friendly way to ask.",
+      "timestamp": "2026-06-03T15:58:47.917122"
+    },
+    {
+      "speaker": "user",
+      "text": "okay stop now",
+      "timestamp": "2026-06-03T15:59:04.172247"
+    },
+    {
+      "speaker": "robot",
+      "text": "It was lovely talking to you. Take care and goodbye!",
+      "timestamp": "2026-06-03T15:59:04.172265"
+    }
+  ],
+  "questionnaire": {}
+}

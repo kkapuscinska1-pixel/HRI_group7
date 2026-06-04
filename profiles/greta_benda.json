@@ -1,0 +1,47 @@
+{
+  "participant_id": "greta_benda",
+  "preferred_name": "Greta",
+  "enjoyed_topics": [
+    "swimming"
+  ],
+  "liked_activities": [
+    "swimming"
+  ],
+  "people_or_pets": [],
+  "communication_preferences": {
+    "question_type": "choice",
+    "needs_extra_time": true,
+    "helpful_supports": [
+      "repeat",
+      "rephrase",
+      "two_choices"
+    ]
+  },
+  "topics_to_avoid": [],
+  "future_conversation_suggestions": [
+    "asking about her day"
+  ],
+  "session_notes": {
+    "what_went_well": [
+      "Greta was able to share her interest in swimming",
+      "Responded well to choice questions"
+    ],
+    "what_was_hard": [
+      "Some difficulty understanding or communicating phrases like 'you think'",
+      "Possibly struggled with discussing her day"
+    ],
+    "support_that_helped": [
+      "Offering two choices when clarifying",
+      "Rephrasing questions"
+    ],
+    "possible_stt_or_transcription_issues": [
+      "The phrase 'you think' might have been misinterpreted",
+      "Misinterpretation of 'I don't think it likes my goodbyes'"
+    ]
+  },
+  "suggested_next_scenario": {
+    "scenario": "social_roleplay",
+    "reason": "To practice everyday scenarios and increase ease with conversations"
+  },
+  "avoided_topics": []
+}

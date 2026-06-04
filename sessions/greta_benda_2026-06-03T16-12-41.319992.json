@@ -1,0 +1,121 @@
+{
+  "participant_id": "greta_benda",
+  "scenario": "Small Talk",
+  "timestamp": "2026-06-03T16:09:37.175449",
+  "duration_seconds": 184.14,
+  "exit_reason": "user_exit_phrase",
+  "pacing_metadata": {
+    "avg_response_time_seconds": 4.43,
+    "total_user_turns": 10,
+    "slow_pace_count": 2
+  },
+  "errors_encountered": [],
+  "conversation": [
+    {
+      "speaker": "robot",
+      "text": "Hello Greta! I am your robot assistant. How are you feeling today?",
+      "timestamp": "2026-06-03T16:09:38.162475"
+    },
+    {
+      "speaker": "user",
+      "text": "you think",
+      "timestamp": "2026-06-03T16:09:51.180923"
+    },
+    {
+      "speaker": "robot",
+      "text": "I may have heard 'think'. Did you mean 'think' or 'drink'?",
+      "timestamp": "2026-06-03T16:09:51.180936"
+    },
+    {
+      "speaker": "user",
+      "text": "I'm good how are you",
+      "timestamp": "2026-06-03T16:10:09.120537"
+    },
+    {
+      "speaker": "robot",
+      "text": "I'm glad to hear that, Greta! I'm feeling great, thank you.",
+      "timestamp": "2026-06-03T16:10:09.120553"
+    },
+    {
+      "speaker": "user",
+      "text": "that's great",
+      "timestamp": "2026-06-03T16:10:27.350044"
+    },
+    {
+      "speaker": "robot",
+      "text": "What is one thing you enjoy doing?",
+      "timestamp": "2026-06-03T16:10:27.350061"
+    },
+    {
+      "speaker": "user",
+      "text": "um I really enjoy swimming",
+      "timestamp": "2026-06-03T16:10:38.965145"
+    },
+    {
+      "speaker": "robot",
+      "text": "Swimming sounds fun! Do you like swimming in a pool or the sea?",
+      "timestamp": "2026-06-03T16:10:38.965152"
+    },
+    {
+      "speaker": "user",
+      "text": "I prefer swimming in a pool",
+      "timestamp": "2026-06-03T16:11:04.214786"
+    },
+    {
+      "speaker": "robot",
+      "text": "A pool is a nice place to swim. Do you go often?",
+      "timestamp": "2026-06-03T16:11:04.214802"
+    },
+    {
+      "speaker": "user",
+      "text": "I try to go like 2 or 3 times a week",
+      "timestamp": "2026-06-03T16:11:22.299619"
+    },
+    {
+      "speaker": "robot",
+      "text": "That's wonderful, Greta. Do you find it relaxing?",
+      "timestamp": "2026-06-03T16:11:22.299630"
+    },
+    {
+      "speaker": "user",
+      "text": "yes",
+      "timestamp": "2026-06-03T16:11:34.400536"
+    },
+    {
+      "speaker": "robot",
+      "text": "I'm glad to hear that, Greta. Would you like to talk about something else?",
+      "timestamp": "2026-06-03T16:11:34.400552"
+    },
+    {
+      "speaker": "user",
+      "text": "my day",
+      "timestamp": "2026-06-03T16:11:55.352575"
+    },
+    {
+      "speaker": "robot",
+      "text": "Did you have a good day today, Greta?",
+      "timestamp": "2026-06-03T16:11:55.352591"
+    },
+    {
+      "speaker": "user",
+      "text": "ah",
+      "timestamp": "2026-06-03T16:12:14.774144"
+    },
+    {
+      "speaker": "robot",
+      "text": "I may have heard 'ah'. Did you mean you had a busy day or a quiet day?",
+      "timestamp": "2026-06-03T16:12:14.774156"
+    },
+    {
+      "speaker": "user",
+      "text": "I don't think it likes my goodbyes",
+      "timestamp": "2026-06-03T16:12:29.525383"
+    },
+    {
+      "speaker": "robot",
+      "text": "It was lovely talking to you. Take care and goodbye!",
+      "timestamp": "2026-06-03T16:12:29.525407"
+    }
+  ],
+  "questionnaire": {}
+}

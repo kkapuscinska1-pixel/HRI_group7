@@ -47,7 +47,7 @@ from twisted.internet.task import deferLater
 # CONSTANTS
 # =============================================================================
 
-WAMP_REALM = "rie.6a16d460f2a08d602afbbb9a"
+WAMP_REALM = "rie.6a2028558a2cba4f82b851d2"
 LLM_MODEL = "gpt-4o"
 LLM_TIMEOUT = 15.0         # seconds — abandon API call after this
 

@@ -1,0 +1,71 @@
+{
+  "participant_id": "madalina_gavat",
+  "scenario": "Small Talk",
+  "timestamp": "2026-06-03T15:36:38.711134",
+  "duration_seconds": 132.65,
+  "exit_reason": "user_exit_phrase",
+  "pacing_metadata": {
+    "avg_response_time_seconds": 7.75,
+    "total_user_turns": 5,
+    "slow_pace_count": 2
+  },
+  "errors_encountered": [],
+  "conversation": [
+    {
+      "speaker": "robot",
+      "text": "Hello Madalina! I am your robot assistant. How are you feeling today?",
+      "timestamp": "2026-06-03T15:36:42.605729"
+    },
+    {
+      "speaker": "user",
+      "text": "and hello I'm good how are you",
+      "timestamp": "2026-06-03T15:37:17.309989"
+    },
+    {
+      "speaker": "robot",
+      "text": "I'm doing well, thank you. What do you enjoy doing in your free time?",
+      "timestamp": "2026-06-03T15:37:17.310000"
+    },
+    {
+      "speaker": "user",
+      "text": "for",
+      "timestamp": "2026-06-03T15:37:37.977853"
+    },
+    {
+      "speaker": "robot",
+      "text": "I may have missed something. Did you mention sports or art?",
+      "timestamp": "2026-06-03T15:37:37.977862"
+    },
+    {
+      "speaker": "user",
+      "text": "it's bad because they're the guys that are speaking in the back and",
+      "timestamp": "2026-06-03T15:38:07.330691"
+    },
+    {
+      "speaker": "robot",
+      "text": "I noticed some background noise. Did you mention feeling disturbed by it?",
+      "timestamp": "2026-06-03T15:38:07.330701"
+    },
+    {
+      "speaker": "user",
+      "text": "and it also has Auto slow did you",
+      "timestamp": "2026-06-03T15:38:26.742708"
+    },
+    {
+      "speaker": "robot",
+      "text": "I might have missed something. Could you tell me more about what's slow?",
+      "timestamp": "2026-06-03T15:38:26.742725"
+    },
+    {
+      "speaker": "user",
+      "text": "bye bye bye bye bye bye bye bye bye",
+      "timestamp": "2026-06-03T15:38:40.467110"
+    },
+    {
+      "speaker": "robot",
+      "text": "It was lovely talking to you. Take care and goodbye!",
+      "timestamp": "2026-06-03T15:38:40.467129"
+    }
+  ],
+  "questionnaire": {}
+}

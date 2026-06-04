@@ -1,0 +1,121 @@
+{
+  "participant_id": "katarzyna_kapuscinska",
+  "scenario": "Therapy Practice Session",
+  "timestamp": "2026-06-03T15:46:31.386636",
+  "duration_seconds": 201.81,
+  "exit_reason": "user_exit_phrase",
+  "pacing_metadata": {
+    "avg_response_time_seconds": 4.14,
+    "total_user_turns": 10,
+    "slow_pace_count": 0
+  },
+  "errors_encountered": [],
+  "conversation": [
+    {
+      "speaker": "robot",
+      "text": "Hello Katarzyna! I am your robot assistant. How are you feeling today?",
+      "timestamp": "2026-06-03T15:46:34.960089"
+    },
+    {
+      "speaker": "user",
+      "text": "I'm good thank you",
+      "timestamp": "2026-06-03T15:46:50.940194"
+    },
+    {
+      "speaker": "robot",
+      "text": "Great to hear that! Would you like to practice some words today?",
+      "timestamp": "2026-06-03T15:46:50.940204"
+    },
+    {
+      "speaker": "user",
+      "text": "yes",
+      "timestamp": "2026-06-03T15:47:11.814558"
+    },
+    {
+      "speaker": "robot",
+      "text": "Let's start with something simple. Can you say \"book\"?",
+      "timestamp": "2026-06-03T15:47:11.814565"
+    },
+    {
+      "speaker": "user",
+      "text": "book",
+      "timestamp": "2026-06-03T15:47:25.026010"
+    },
+    {
+      "speaker": "robot",
+      "text": "Well done, Katarzyna! How about \"music\" next?",
+      "timestamp": "2026-06-03T15:47:25.026026"
+    },
+    {
+      "speaker": "user",
+      "text": "music",
+      "timestamp": "2026-06-03T15:47:43.046198"
+    },
+    {
+      "speaker": "robot",
+      "text": "Excellent! Let's try \"song\" next.",
+      "timestamp": "2026-06-03T15:47:43.046208"
+    },
+    {
+      "speaker": "user",
+      "text": "I could do something harder",
+      "timestamp": "2026-06-03T15:47:59.618609"
+    },
+    {
+      "speaker": "robot",
+      "text": "That's wonderful, Katarzyna! Would you like to try a short phrase or a new word?",
+      "timestamp": "2026-06-03T15:47:59.618623"
+    },
+    {
+      "speaker": "user",
+      "text": "short phrase",
+      "timestamp": "2026-06-03T15:48:14.891805"
+    },
+    {
+      "speaker": "robot",
+      "text": "Let's try \"good morning\". Can you say it?",
+      "timestamp": "2026-06-03T15:48:14.891819"
+    },
+    {
+      "speaker": "user",
+      "text": "good afternoon",
+      "timestamp": "2026-06-03T15:48:30.660776"
+    },
+    {
+      "speaker": "robot",
+      "text": "Great effort! Let's try \"good afternoon\" next.",
+      "timestamp": "2026-06-03T15:48:30.660792"
+    },
+    {
+      "speaker": "user",
+      "text": "good afternoon",
+      "timestamp": "2026-06-03T15:48:53.495503"
+    },
+    {
+      "speaker": "robot",
+      "text": "Wonderful, Katarzyna! Would you like to try another phrase?",
+      "timestamp": "2026-06-03T15:48:53.495514"
+    },
+    {
+      "speaker": "user",
+      "text": "no I think I'm done for today",
+      "timestamp": "2026-06-03T15:49:21.143833"
+    },
+    {
+      "speaker": "robot",
+      "text": "That's okay, Katarzyna! Thank you for practicing with me.",
+      "timestamp": "2026-06-03T15:49:21.143852"
+    },
+    {
+      "speaker": "user",
+      "text": "1 of the magic words stop stop",
+      "timestamp": "2026-06-03T15:49:42.133212"
+    },
+    {
+      "speaker": "robot",
+      "text": "It was lovely talking to you. Take care and goodbye!",
+      "timestamp": "2026-06-03T15:49:42.133227"
+    }
+  ],
+  "questionnaire": {}
+}

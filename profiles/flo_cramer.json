@@ -1,0 +1,31 @@
+{
+  "participant_id": "flo_cramer",
+  "preferred_name": "Flo",
+  "enjoyed_topics": [],
+  "liked_activities": [
+    "role-play",
+    "conversation practice"
+  ],
+  "people_or_pets": [],
+  "communication_preferences": {
+    "question_type": "mixed",
+    "needs_extra_time": null,
+    "helpful_supports": []
+  },
+  "topics_to_avoid": [],
+  "future_conversation_suggestions": [],
+  "session_notes": {
+    "what_went_well": [
+      "engaged in role-play",
+      "asked personal questions"
+    ],
+    "what_was_hard": [],
+    "support_that_helped": [],
+    "possible_stt_or_transcription_issues": []
+  },
+  "suggested_next_scenario": {
+    "scenario": "social_roleplay",
+    "reason": "Flo engaged well with the role-playing activities and might benefit from practicing more everyday situations."
+  },
+  "avoided_topics": []
+}

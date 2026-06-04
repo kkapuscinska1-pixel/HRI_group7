@@ -1,0 +1,36 @@
+{
+  "participant_id": "martijn_schippers",
+  "preferred_name": "Martijn",
+  "enjoyed_topics": [
+    "fruits"
+  ],
+  "liked_activities": [
+    "word game"
+  ],
+  "people_or_pets": [],
+  "communication_preferences": {
+    "question_type": "open",
+    "needs_extra_time": null,
+    "helpful_supports": []
+  },
+  "topics_to_avoid": [],
+  "future_conversation_suggestions": [
+    "exploring more food choices"
+  ],
+  "session_notes": {
+    "what_went_well": [
+      "user engaged well with open questions",
+      "user articulated preferences clearly"
+    ],
+    "what_was_hard": [],
+    "support_that_helped": [],
+    "possible_stt_or_transcription_issues": [
+      "user repeated 'assistance' at the beginning"
+    ]
+  },
+  "suggested_next_scenario": {
+    "scenario": "small_talk",
+    "reason": "User responded positively and shared personal interests such as favorite fruits."
+  },
+  "avoided_topics": []
+}

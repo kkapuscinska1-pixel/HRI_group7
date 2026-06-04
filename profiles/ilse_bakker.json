@@ -1,0 +1,32 @@
+{
+  "participant_id": "ilse_bakker",
+  "preferred_name": "Ilse",
+  "enjoyed_topics": [],
+  "liked_activities": [
+    "walking"
+  ],
+  "people_or_pets": [],
+  "communication_preferences": {
+    "question_type": "choice",
+    "needs_extra_time": null,
+    "helpful_supports": []
+  },
+  "topics_to_avoid": [],
+  "future_conversation_suggestions": [],
+  "session_notes": {
+    "what_went_well": [
+      "User expressed enjoyment in walking",
+      "User was able to answer choice questions"
+    ],
+    "what_was_hard": [],
+    "support_that_helped": [],
+    "possible_stt_or_transcription_issues": [
+      "'Wall' might be a transcription error for 'walk'"
+    ]
+  },
+  "suggested_next_scenario": {
+    "scenario": "small_talk",
+    "reason": "User seemed comfortable and engaged in conversation about personal interests"
+  },
+  "avoided_topics": []
+}

@@ -1,0 +1,38 @@
+{
+  "participant_id": "katarzyna_kapuscinska",
+  "preferred_name": "Katarzyna",
+  "enjoyed_topics": [
+    "music"
+  ],
+  "liked_activities": [
+    "word practice"
+  ],
+  "people_or_pets": [],
+  "communication_preferences": {
+    "question_type": "choice",
+    "needs_extra_time": null,
+    "helpful_supports": [
+      "repeat",
+      "two_choices"
+    ]
+  },
+  "topics_to_avoid": [],
+  "future_conversation_suggestions": [],
+  "session_notes": {
+    "what_went_well": [
+      "Katarzyna successfully practiced words and phrases",
+      "Showed willingness to try harder tasks"
+    ],
+    "what_was_hard": [],
+    "support_that_helped": [
+      "Allowed choice in practice",
+      "Repeated phrases and encouraged"
+    ],
+    "possible_stt_or_transcription_issues": []
+  },
+  "suggested_next_scenario": {
+    "scenario": "therapy_practice",
+    "reason": "Katarzyna engaged actively in word and phrase practice and showed interest in more challenging tasks."
+  },
+  "avoided_topics": []
+}
