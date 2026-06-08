@@ -1,0 +1,74 @@
+{
+  "participant_id": "madalina_gavat",
+  "scenario": "Small Talk",
+  "timestamp": "2026-06-08T14:07:23.460482",
+  "duration_seconds": 95.0,
+  "exit_reason": "user_exit_phrase",
+  "pacing_metadata": {
+    "avg_response_time_seconds": 3.84,
+    "total_user_turns": 5,
+    "slow_pace_count": 0
+  },
+  "errors_encountered": [
+    "14:08:36.156: [WAMP] Timeout: rie.dialogue.say",
+    "14:08:36.157: [WAMP] Error rie.dialogue.say: CancelledError: "
+  ],
+  "conversation": [
+    {
+      "speaker": "robot",
+      "text": "Hello Madalina! I am your robot assistant. How are you feeling today?",
+      "timestamp": "2026-06-08T14:07:24.461498"
+    },
+    {
+      "speaker": "user",
+      "text": "I'm feeling good thank you",
+      "timestamp": "2026-06-08T14:07:39.313654"
+    },
+    {
+      "speaker": "robot",
+      "text": "That's great to hear! Do you have any hobbies you enjoy?",
+      "timestamp": "2026-06-08T14:07:39.313662"
+    },
+    {
+      "speaker": "user",
+      "text": "I like",
+      "timestamp": "2026-06-08T14:07:51.620817"
+    },
+    {
+      "speaker": "robot",
+      "text": "I may have heard you say like. Do you like reading or listening to music?",
+      "timestamp": "2026-06-08T14:07:51.620839"
+    },
+    {
+      "speaker": "user",
+      "text": "I really like both",
+      "timestamp": "2026-06-08T14:08:04.701656"
+    },
+    {
+      "speaker": "robot",
+      "text": "That's wonderful! Do you have a favorite book or song?",
+      "timestamp": "2026-06-08T14:08:04.701667"
+    },
+    {
+      "speaker": "user",
+      "text": "I like Peter Pan",
+      "timestamp": "2026-06-08T14:08:24.152036"
+    },
+    {
+      "speaker": "robot",
+      "text": "Peter Pan is a classic! Do you enjoy other adventures too?",
+      "timestamp": "2026-06-08T14:08:24.152046"
+    },
+    {
+      "speaker": "user",
+      "text": "Goodbye stop",
+      "timestamp": "2026-06-08T14:08:46.266667"
+    },
+    {
+      "speaker": "robot",
+      "text": "It was lovely talking to you. Take care and goodbye!",
+      "timestamp": "2026-06-08T14:08:46.266686"
+    }
+  ],
+  "questionnaire": {}
+}

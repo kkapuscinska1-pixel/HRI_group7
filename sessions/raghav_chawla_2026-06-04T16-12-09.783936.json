@@ -1,0 +1,101 @@
+{
+  "participant_id": "raghav_chawla",
+  "scenario": "Social Roleplay",
+  "timestamp": "2026-06-04T16:09:57.804353",
+  "duration_seconds": 131.98,
+  "exit_reason": "user_exit_phrase",
+  "pacing_metadata": {
+    "avg_response_time_seconds": 2.36,
+    "total_user_turns": 8,
+    "slow_pace_count": 0
+  },
+  "errors_encountered": [],
+  "conversation": [
+    {
+      "speaker": "robot",
+      "text": "Hello Raghav! I am your robot assistant. How are you feeling today?",
+      "timestamp": "2026-06-04T16:09:58.848933"
+    },
+    {
+      "speaker": "user",
+      "text": "how are you feeling today",
+      "timestamp": "2026-06-04T16:10:09.654976"
+    },
+    {
+      "speaker": "robot",
+      "text": "I'm doing well, thank you. How about you?",
+      "timestamp": "2026-06-04T16:10:09.654991"
+    },
+    {
+      "speaker": "user",
+      "text": "I'm also doing good",
+      "timestamp": "2026-06-04T16:10:28.127242"
+    },
+    {
+      "speaker": "robot",
+      "text": "That's great to hear! Would you like to practice a roleplay today?",
+      "timestamp": "2026-06-04T16:10:28.127252"
+    },
+    {
+      "speaker": "user",
+      "text": "yes let's practice role play",
+      "timestamp": "2026-06-04T16:10:45.124022"
+    },
+    {
+      "speaker": "robot",
+      "text": "Let's practice ordering coffee. How would you start your order?",
+      "timestamp": "2026-06-04T16:10:45.124033"
+    },
+    {
+      "speaker": "user",
+      "text": "could I have an espresso",
+      "timestamp": "2026-06-04T16:10:58.640925"
+    },
+    {
+      "speaker": "robot",
+      "text": "That's a good choice! Would you like anything to go with it?",
+      "timestamp": "2026-06-04T16:10:58.640936"
+    },
+    {
+      "speaker": "user",
+      "text": "could I have it with a sandwich",
+      "timestamp": "2026-06-04T16:11:11.304001"
+    },
+    {
+      "speaker": "robot",
+      "text": "Great choice! Is there a specific type of sandwich you prefer?",
+      "timestamp": "2026-06-04T16:11:11.304017"
+    },
+    {
+      "speaker": "user",
+      "text": "bacon ham and cheese",
+      "timestamp": "2026-06-04T16:11:23.831258"
+    },
+    {
+      "speaker": "robot",
+      "text": "That sounds delicious! Anything else with that?",
+      "timestamp": "2026-06-04T16:11:23.831268"
+    },
+    {
+      "speaker": "user",
+      "text": "I think that was all",
+      "timestamp": "2026-06-04T16:11:41.137128"
+    },
+    {
+      "speaker": "robot",
+      "text": "Perfect. That's all for your order then.",
+      "timestamp": "2026-06-04T16:11:41.137145"
+    },
+    {
+      "speaker": "user",
+      "text": "stop this was better this was better also it's good comparison I guess yeah",
+      "timestamp": "2026-06-04T16:11:55.952498"
+    },
+    {
+      "speaker": "robot",
+      "text": "It was lovely talking to you. Take care and goodbye!",
+      "timestamp": "2026-06-04T16:11:55.952518"
+    }
+  ],
+  "questionnaire": {}
+}

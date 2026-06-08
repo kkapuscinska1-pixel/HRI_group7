@@ -1,0 +1,37 @@
+{
+  "participant_id": "madalina_gavat",
+  "preferred_name": "Madalina",
+  "enjoyed_topics": [
+    "reading",
+    "music",
+    "adventure stories"
+  ],
+  "liked_activities": [
+    "reading",
+    "listening to music"
+  ],
+  "people_or_pets": [],
+  "communication_preferences": {
+    "question_type": "mixed",
+    "needs_extra_time": null,
+    "helpful_supports": []
+  },
+  "topics_to_avoid": [],
+  "future_conversation_suggestions": [],
+  "session_notes": {
+    "what_went_well": [
+      "User expressed enjoyment of both reading and music",
+      "User shared a favorite book"
+    ],
+    "what_was_hard": [],
+    "support_that_helped": [
+      "offering choices"
+    ],
+    "possible_stt_or_transcription_issues": []
+  },
+  "suggested_next_scenario": {
+    "scenario": "small_talk",
+    "reason": "The user was comfortable sharing personal interests."
+  },
+  "avoided_topics": []
+}

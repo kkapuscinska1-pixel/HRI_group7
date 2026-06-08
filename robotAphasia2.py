@@ -32,7 +32,7 @@ from twisted.internet.task import deferLater, LoopingCall
 # CONSTANTS  (all tuneable in one place)
 # =============================================================================
 
-WAMP_REALM = "rie.6a2028558a2cba4f82b851d2"
+WAMP_REALM = "rie.6a215f348a2cba4f82b85782"
 LLM_MODEL = "gpt-4o"
 LLM_TIMEOUT_SECS = 20.0    # OpenAI request hard timeout (in thread)
 LLM_RETRY_DELAYS = (1.0, 3.0)  # wait before attempt 2, 3 (exp. backoff)

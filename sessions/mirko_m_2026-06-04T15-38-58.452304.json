@@ -1,0 +1,111 @@
+{
+  "participant_id": "mirko_m",
+  "scenario": "Therapy Practice Session",
+  "timestamp": "2026-06-04T15:35:54.188425",
+  "duration_seconds": 184.26,
+  "exit_reason": "user_exit_phrase",
+  "pacing_metadata": {
+    "avg_response_time_seconds": 5.48,
+    "total_user_turns": 9,
+    "slow_pace_count": 0
+  },
+  "errors_encountered": [],
+  "conversation": [
+    {
+      "speaker": "robot",
+      "text": "Hello Mirko! I am your robot assistant. How are you feeling today?",
+      "timestamp": "2026-06-04T15:35:57.883348"
+    },
+    {
+      "speaker": "user",
+      "text": "hello what is your name",
+      "timestamp": "2026-06-04T15:36:15.850457"
+    },
+    {
+      "speaker": "robot",
+      "text": "Hello Mirko! I'm your friendly robot assistant.",
+      "timestamp": "2026-06-04T15:36:15.850468"
+    },
+    {
+      "speaker": "user",
+      "text": "maybe see something else so uh what's what's are we going to do today",
+      "timestamp": "2026-06-04T15:36:36.008521"
+    },
+    {
+      "speaker": "robot",
+      "text": "Would you like to practice some words today, Mirko?",
+      "timestamp": "2026-06-04T15:36:36.008534"
+    },
+    {
+      "speaker": "user",
+      "text": "yes",
+      "timestamp": "2026-06-04T15:36:51.777348"
+    },
+    {
+      "speaker": "robot",
+      "text": "Great! Let's try saying the word \"radio\" together.",
+      "timestamp": "2026-06-04T15:36:51.777359"
+    },
+    {
+      "speaker": "user",
+      "text": "radio",
+      "timestamp": "2026-06-04T15:37:09.800655"
+    },
+    {
+      "speaker": "robot",
+      "text": "Well done, Mirko! Would you like to try another word?",
+      "timestamp": "2026-06-04T15:37:09.800667"
+    },
+    {
+      "speaker": "user",
+      "text": "yes and can you make it a bit harder Maybe",
+      "timestamp": "2026-06-04T15:37:30.278303"
+    },
+    {
+      "speaker": "robot",
+      "text": "Let's try the word \"songwriting.\" Give it a go!",
+      "timestamp": "2026-06-04T15:37:30.278311"
+    },
+    {
+      "speaker": "user",
+      "text": "song writing",
+      "timestamp": "2026-06-04T15:37:47.280553"
+    },
+    {
+      "speaker": "robot",
+      "text": "Great job, Mirko! That was a bit tricky.",
+      "timestamp": "2026-06-04T15:37:47.280564"
+    },
+    {
+      "speaker": "user",
+      "text": "see can we do now something more than just a single word",
+      "timestamp": "2026-06-04T15:38:11.447627"
+    },
+    {
+      "speaker": "robot",
+      "text": "How about practicing a short phrase, like \"I like music\"?",
+      "timestamp": "2026-06-04T15:38:11.447643"
+    },
+    {
+      "speaker": "user",
+      "text": "I like music",
+      "timestamp": "2026-06-04T15:38:28.240093"
+    },
+    {
+      "speaker": "robot",
+      "text": "Nice work, Mirko! Do you want to try another phrase?",
+      "timestamp": "2026-06-04T15:38:28.240104"
+    },
+    {
+      "speaker": "user",
+      "text": "no thank you that was it bye",
+      "timestamp": "2026-06-04T15:38:47.094129"
+    },
+    {
+      "speaker": "robot",
+      "text": "It was lovely talking to you. Take care and goodbye!",
+      "timestamp": "2026-06-04T15:38:47.094141"
+    }
+  ],
+  "questionnaire": {}
+}

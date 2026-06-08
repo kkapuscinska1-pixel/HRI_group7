@@ -1,0 +1,35 @@
+{
+  "participant_id": "mirko_m",
+  "preferred_name": "Mirko",
+  "enjoyed_topics": [],
+  "liked_activities": [],
+  "people_or_pets": [],
+  "communication_preferences": {
+    "question_type": "yes_no",
+    "needs_extra_time": null,
+    "helpful_supports": [
+      "repeat",
+      "slower_pace"
+    ]
+  },
+  "topics_to_avoid": [],
+  "future_conversation_suggestions": [],
+  "session_notes": {
+    "what_went_well": [
+      "User successfully repeated single words and short phrases",
+      "User showed interest in more challenging tasks"
+    ],
+    "what_was_hard": [],
+    "support_that_helped": [
+      "Encouragement and small task increments"
+    ],
+    "possible_stt_or_transcription_issues": [
+      "User said 'song writing' instead of 'songwriting'"
+    ]
+  },
+  "suggested_next_scenario": {
+    "scenario": "therapy_practice",
+    "reason": "User interested in continuing language practice with increasing difficulty."
+  },
+  "avoided_topics": []
+}
