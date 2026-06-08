@@ -1,0 +1,71 @@
+{
+  "participant_id": "madalina_gavat",
+  "scenario": "Therapy Practice Session",
+  "timestamp": "2026-06-08T14:10:23.116786",
+  "duration_seconds": 109.59,
+  "exit_reason": "user_exit_phrase",
+  "pacing_metadata": {
+    "avg_response_time_seconds": 4.89,
+    "total_user_turns": 5,
+    "slow_pace_count": 1
+  },
+  "errors_encountered": [],
+  "conversation": [
+    {
+      "speaker": "robot",
+      "text": "Hello Madalina! Great to see you again. Are you ready to start today?",
+      "timestamp": "2026-06-08T14:10:26.736460"
+    },
+    {
+      "speaker": "user",
+      "text": "yes yes you can see the game",
+      "timestamp": "2026-06-08T14:10:42.567514"
+    },
+    {
+      "speaker": "robot",
+      "text": "I may have heard game. Did you mean a board game or a video game?",
+      "timestamp": "2026-06-08T14:10:42.567523"
+    },
+    {
+      "speaker": "user",
+      "text": "there was someone else speaking in the background",
+      "timestamp": "2026-06-08T14:11:12.673134"
+    },
+    {
+      "speaker": "robot",
+      "text": "It can be distracting, right? Let's focus together for a moment.",
+      "timestamp": "2026-06-08T14:11:12.673150"
+    },
+    {
+      "speaker": "user",
+      "text": "does something sometimes okay I'm focused",
+      "timestamp": "2026-06-08T14:11:32.775173"
+    },
+    {
+      "speaker": "robot",
+      "text": "Great! Let's try naming some things you enjoy a lot. How about music or reading?",
+      "timestamp": "2026-06-08T14:11:32.775183"
+    },
+    {
+      "speaker": "user",
+      "text": "yeah all right",
+      "timestamp": "2026-06-08T14:11:49.466422"
+    },
+    {
+      "speaker": "robot",
+      "text": "Let's start with music. Can you tell me a song you like?",
+      "timestamp": "2026-06-08T14:11:49.466438"
+    },
+    {
+      "speaker": "user",
+      "text": "stop",
+      "timestamp": "2026-06-08T14:12:01.386977"
+    },
+    {
+      "speaker": "robot",
+      "text": "It was lovely talking to you. Take care and goodbye!",
+      "timestamp": "2026-06-08T14:12:01.386990"
+    }
+  ],
+  "questionnaire": {}
+}

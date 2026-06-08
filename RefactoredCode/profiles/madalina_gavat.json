@@ -12,26 +12,35 @@
   ],
   "people_or_pets": [],
   "communication_preferences": {
-    "question_type": "mixed",
-    "needs_extra_time": null,
-    "helpful_supports": []
+    "question_type": "yes_no",
+    "needs_extra_time": true,
+    "helpful_supports": [
+      "repeat",
+      "slower_pace"
+    ]
   },
   "topics_to_avoid": [],
   "future_conversation_suggestions": [],
   "session_notes": {
     "what_went_well": [
       "User expressed enjoyment of both reading and music",
-      "User shared a favorite book"
+      "User shared a favorite book",
+      "Acknowledging the user's distraction and guiding focus"
     ],
-    "what_was_hard": [],
+    "what_was_hard": [
+      "Understanding user's input related to games"
+    ],
     "support_that_helped": [
-      "offering choices"
+      "offering choices",
+      "Providing a slower pace"
     ],
-    "possible_stt_or_transcription_issues": []
+    "possible_stt_or_transcription_issues": [
+      "Misinterpretation of the word 'game'"
+    ]
   },
   "suggested_next_scenario": {
-    "scenario": "small_talk",
-    "reason": "The user was comfortable sharing personal interests."
+    "scenario": "therapy_practice",
+    "reason": "User struggled with specific short phrases and focused responses"
   },
   "avoided_topics": []
 }
