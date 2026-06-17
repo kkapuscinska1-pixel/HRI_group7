@@ -67,7 +67,7 @@ class ProfileManager:
                 return data
             except (json.JSONDecodeError, OSError) as exc:
                 print(
-                    f"[PROFILE] Warning — corrupt profile ({exc}). Starting fresh.")
+                    f"[PROFILE] Warning! corrupt profile ({exc}). Starting fresh.")
         else:
             print(
                 f"[PROFILE] No profile found for '{pid}'. Creating new profile.")

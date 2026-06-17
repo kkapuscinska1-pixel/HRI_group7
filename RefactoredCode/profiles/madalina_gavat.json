@@ -1,46 +1,32 @@
 {
   "participant_id": "madalina_gavat",
   "preferred_name": "Madalina",
-  "enjoyed_topics": [
-    "reading",
-    "music",
-    "adventure stories"
-  ],
-  "liked_activities": [
-    "reading",
-    "listening to music"
-  ],
+  "enjoyed_topics": [],
+  "liked_activities": [],
   "people_or_pets": [],
   "communication_preferences": {
-    "question_type": "yes_no",
-    "needs_extra_time": true,
+    "question_type": null,
+    "needs_extra_time": null,
     "helpful_supports": [
-      "repeat",
-      "slower_pace"
+      "repeat"
     ]
   },
   "topics_to_avoid": [],
   "future_conversation_suggestions": [],
   "session_notes": {
-    "what_went_well": [
-      "User expressed enjoyment of both reading and music",
-      "User shared a favorite book",
-      "Acknowledging the user's distraction and guiding focus"
-    ],
+    "what_went_well": [],
     "what_was_hard": [
-      "Understanding user's input related to games"
+      "background noise",
+      "understanding specific words or phrases"
     ],
-    "support_that_helped": [
-      "offering choices",
-      "Providing a slower pace"
-    ],
+    "support_that_helped": [],
     "possible_stt_or_transcription_issues": [
-      "Misinterpretation of the word 'game'"
+      "missed words due to noise"
     ]
   },
   "suggested_next_scenario": {
     "scenario": "therapy_practice",
-    "reason": "User struggled with specific short phrases and focused responses"
+    "reason": "User struggled with specific words or short phrases"
   },
   "avoided_topics": []
 }

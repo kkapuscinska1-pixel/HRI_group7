@@ -80,9 +80,9 @@ if __name__ == "__main__":
     try:
         run([wamp])
     except KeyboardInterrupt:
-        print("\n[STOP] Keyboard interrupt — saving session before exit...")
+        print("\n Keyboard interrupt. Saving session before exit...")
         if active_controller[0] is not None:
             active_controller[0].exit_reason = "keyboard_interrupt"
             active_controller[0]._stop_watchdog()
             active_controller[0].save_session_log()
-        print("[STOP] Done.")
+        print(" Done.")
